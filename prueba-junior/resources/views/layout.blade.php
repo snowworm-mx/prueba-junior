@@ -19,9 +19,11 @@
                     <h6 class="text-light">Bienvenido <?php echo $sessionusuario ?></h6>
                 </div>
                 <div class="col-6 d-flex align-items-center">
-                    <a href="{{ route('cerrarsesion') }}">
-                        <button class="btn  btn-danger btn-sm" type="button">Cerrar Sesión</button>
-                    </a>
+                    @if($sessionusuario <> "")
+                        <a href="{{ route('cerrarsesion') }}">
+                            <button class="btn  btn-danger btn-sm" type="button">Cerrar Sesión</button>
+                        </a>
+                    @endif
                 </div>
             </div>
             @endif

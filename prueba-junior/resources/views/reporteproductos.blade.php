@@ -11,10 +11,10 @@
     </div>
     <div class="col-10">
         @if(Session::has('mensaje'))
-        <div class="alert alert-success mt-3 mb-3">
-            {{ Session::get('mensaje') }}
-        </div>
-    @endif
+            <div class="alert alert-success mt-3 mb-3">
+                {{ Session::get('mensaje') }}
+            </div>
+        @endif
     </div>
     <div class="col-9 ">
         <table class="table ">
@@ -48,6 +48,11 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                {{ $consulta->links('pagination::bootstrap-4') }}
+            </div>
+        </div>
     </div>
 </div>
 @endsection

@@ -6,7 +6,14 @@
     <form action="{{ route('validarlogin') }}" method="POST">
         {{csrf_field()}}
         <div>
-            <label class="col-form-label mt-4" for="usuario">Usuario</label>
+            <label class="col-form-label mt-2 d-flex justify-content-center">Iniciar Sesión</label>
+            @if(Session::has('mensaje'))
+                <div class="alert alert-success mt-3 mb-3">
+                    {{ Session::get('mensaje') }}
+                </div>
+            @endif
+            <br>
+            <label class="col-form-label" for="usuario">Usuario</label>
             @if($errors -> first('usuario'))
                 <p class="text-danger">{{ $errors -> first('usuario') }}</p>
             @endif</label>

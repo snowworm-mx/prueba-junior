@@ -3,10 +3,12 @@
 @section('contenido')
 
 <div class="d-flex justify-content-center">
-    <form action="{{ route('validarlogin') }}" method="POST">
+    <form action="{{ route('registrarusuario') }}" method="POST">
         {{csrf_field()}}
         <div>
-            <label class="col-form-label mt-4" for="usuario">Usuario</label>
+            <label class="col-form-label mt-2 d-flex justify-content-center">Registro de Usuarios</label>
+            <br>
+            <label class="col-form-label" for="usuario">Usuario</label>
             @if($errors -> first('usuario'))
                 <p class="text-danger">{{ $errors -> first('usuario') }}</p>
             @endif</label>
@@ -19,11 +21,8 @@
             <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password">
         </div>
         <div class="row mt-4">
-            <a class="col-5" href="{{ route('registrousuario') }}">
-                <button class="btn btn-link" type="button">Registrarse</button>
-            </a>
-            <div class="col-7 d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            <div class="col-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Registrarse</button>
             </div>
         </div>
     </form>

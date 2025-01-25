@@ -11,42 +11,40 @@ use Illuminate\Support\Facades\Session;
 
 class ProductosController extends Controller
 {
-    public function login(){
-        return view('login');
-    }
-
-    public function eloquent(){
-        $consulta = productos::all();
-
-        return $consulta;
-    }
 
     public function reporteproductos(){
-        $consulta = productos::select(['idproducto', 'nombreproducto', 'descripcion', 'precio', 'cantidadinventario'])
-        ->get();
+        $sessionusuario = session('sessionusuario');
+        if($sessionusuario<>""){
+            $consulta = productos::select(['idproducto', 'nombreproducto', 'descripcion', 'precio', 'cantidadinventario'])
+            ->paginate(5);
 
-        return view('reporteproductos')
-        ->with('consulta', $consulta);
+            return view('reporteproductos')
+            ->with('consulta', $consulta);
+        }else{
+            Session::flash('mensaje', "Loguearse antes de continuar.");
+            return redirect()->route('login');
+        }
     }
 
     public function altaproductos(){
-        /* $productos = new productos;
-        $productos -> nombreproducto = "producto 3";
-        $productos -> descripcion = "Esto es una descripcion 3";
-        $productos -> precio = 18.50;
-        $productos -> cantidadinventario = 85;
-        $productos -> save(); */
-        $consulta = productos::orderBy('idproducto', 'DESC')
-                                        ->take(1)
-                                        ->get();
-        $cuantos = count($consulta);
-        if($cuantos == 0){
-            $idesigue = 1;
+        $sessionusuario = session('sessionusuario');
+        if($sessionusuario<>""){
+            $consulta = productos::orderBy('idproducto', 'DESC')
+                                            ->take(1)
+                                            ->get();
+            $cuantos = count($consulta);
+            if($cuantos == 0){
+                $idesigue = 1;
+            }else{
+                $idesigue = $consulta[0]->idproducto + 1;
+            }
+            return view('altaproductos')
+            ->with('idesigue', $idesigue);
         }else{
-            $idesigue = $consulta[0]->idproducto + 1;
+            Session::flash('mensaje', "Loguearse antes de continuar.");
+            return redirect()->route('login');
         }
-        return view('altaproductos')
-        ->with('idesigue', $idesigue);
+
     }
 
     public function guardarproducto(Request $request){

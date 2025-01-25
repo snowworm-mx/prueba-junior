@@ -22,7 +22,6 @@ class UsuariosController extends Controller
         ]);
 
         $consulta = usuarios::where('usuario', $request->usuario)
-                            /* ->where('activo', '1') */
                             ->get();
 
         $cuantos = count($consulta);
@@ -31,7 +30,6 @@ class UsuariosController extends Controller
             Session::put('sessionusuario', $consulta[0]->usuario);
             return redirect()->route('reporteproductos');
         }else{
-            /* echo "Accesso no permitido"; */
             Session::flash('mensaje', "El usuario o la contraseña no son validas.");
             return redirect()->route('login');
         }
@@ -45,7 +43,28 @@ class UsuariosController extends Controller
         echo "$passwordCifrada"; */
     }
 
-    public function cerrarsesion(){
+    public function registrarusuario(Request $request){
+        $request -> validate([
+            'usuario' => 'required',
+            'password' => 'required',
+        ]);
+        $password = $request -> password;
+        $passwordCifrada = Hash::make($password);
 
+        $usuarios = new usuarios();
+        $usuarios->usuario = $request -> usuario;
+        $usuarios->password = $passwordCifrada;
+        $usuarios->activo = 1;
+        $usuarios->save();
+
+        Session::flash('mensaje', "El usuario $request->usuario ha sido dado de alta correctamente");
+        return redirect()->route('login');
+    }
+
+    public function cerrarsesion(){
+        Session::forget('sessionusuario');
+        Session::flush();
+        Session::flash('mensaje', "Sesion cerrada correctamente.");
+        return redirect()->route('login');
     }
 }
