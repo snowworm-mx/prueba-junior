@@ -80,7 +80,7 @@ Desarrollar una aplicación web para gestión de inventario que demuestre:
 
 2. **Documentación** en README.md que incluya:
    - Requisitos del sistema
-   - Instrucciones de instalción detalladas
+   - Instrucciones de instalación detalladas
    - Explicación de decisiones técnicas relevantes
    - Capturas de pantalla del funcionamiento
 
@@ -92,26 +92,15 @@ Desarrollar una aplicación web para gestión de inventario que demuestre:
 
 ## 📊 Criterios de Evaluación
 
-### Funcionalidad (40%)
-- Compleción de requisitos obligatorios
-- Correcto funcionamiento de todas las features
-- Manejo adecuado de errores
 
-### Código (30%)
-- Estructura limpia y organización
-- Uso apropiado de Eloquent y relaciones
-- Validación y sanitización de datos
-- Reutilización de código (componentes, traits, etc.)
 
-### UI/UX (20%)
-- Diseño consistente y profesional
-- Experiencia de usuario intuitiva
-- Responsividad en diferentes tamaños
 
-### Documentación (10%)
-- Claridad y completitud del README
-- Calidad de las instrucciones de instalación
-- Explicación de decisiones técnicas
+| Categoría          | Peso  | Detalles                                                                 |
+|--------------------|-------|--------------------------------------------------------------------------|
+| **Funcionalidad**  | 40%   | Compleción de requisitos, correcto funcionamiento                        |                       |
+| **Calidad Código** | 30%   | Estándares, mantenibilidad, eficiencia                                  |
+| **UI/UX**        | 20%   | Diseño consistente y profesional, experiencia de usuario intuitiva                            |
+| **Documentación**  | 10%   | Claridad, completitud, decisiones justificadas    
 
 ---
 
