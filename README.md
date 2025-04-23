@@ -4,122 +4,162 @@
    </div>
    <br>
    <br>
-    <h1 width="200">Desarrollador</h1>
-   <p>La siguiente es una prueba para evaluar a aspectos técnicos de los candidatos a desarrollador <b>Junior</b>.</p>
+    <h1 width="200">Prueba Técnica - Desarrollador Junior</h1>
+   <p>La siguiente prueba evaluará tus habilidades técnicas en el desarrollo web con Laravel y Tailwind CSS.</p>
    <br>
 </div>
 
-## Objetivo de la Prueba
+## 🎯 Objetivo
 
-Desarrollar una aplicación web sencilla utilizando **Laravel** y **Tailwind CSS** para gestionar un inventario básico de productos. Esta prueba evalúa la capacidad del candidato para:
+Desarrollar una aplicación web para gestión de inventario que demuestre:
 
-1. Diseñar una base de datos funcional.
-2. Implementar un backend en Laravel.
-3. Crear una interfaz de usuario sencilla y funcional con Tailwind CSS.
-4. Utilizar las mejores prácticas de desarrollo.
-
----
-
-## Requisitos
-
-### Funcionalidades
-
-1. **Autenticación de usuarios**
-
-   - Los usuarios deben poder registrarse, iniciar sesión y cerrar sesión.
-   - La aplicación debe proteger rutas según si el usuario está autenticado.
-
-2. **Gestor de Productos**
-
-   - Crear, leer, actualizar y eliminar (CRUD) productos.
-   - Cada producto debe tener los siguientes campos:
-     - Nombre (string, obligatorio).
-     - Descripción (text, opcional).
-     - Precio (decimal, obligatorio).
-     - Cantidad en inventario (entero, obligatorio).
-
-3. **Listado de Productos**
-
-   - Mostrar todos los productos disponibles en una tabla.
-   - Permitir buscar productos por nombre o descripción.
-   - Implementar paginación para el listado de productos.
-
-4. **Diseño**
-   - Utilizar **Tailwind CSS** para crear una interfaz amigable y responsive.
+1. Capacidad para implementar funcionalidades básicas en Laravel
+2. Habilidad para crear interfaces responsivas con Tailwind CSS
+3. Comprensión de conceptos fundamentales de desarrollo web
+4. Aplicación de buenas prácticas de programación
 
 ---
 
-## Tecnologías
+## 📋 Requisitos Técnicos
 
-- **Backend:** Laravel (versión 11).
-- **Frontend:** Blade templates y Tailwind CSS.
-- **Base de Datos:** MySQL o SQLite.
-- **Autenticación:** Laravel Breeze o Sanctum.
-- **Control de versiones:** Git.
+### 🔒 Módulo de Autenticación
+- [ ] Sistema de registro/login con validación
+- [ ] Protección de rutas para usuarios no autenticados
+- [ ] Perfil básico del usuario (nombre, email, fecha de registro)
+- [ ] Opción de cerrar sesión
 
----
+### 🛍️ Gestión de Categorías (CRUD Completo)
+- [ ] Creación de categorías con campos:
+  - Nombre (requerido, máximo 100 caracteres)
+  - Descripción (opcional, texto largo)
+  - Imagen (opcional, almacenamiento local)
+- [ ] Listado paginado con búsqueda (nombre/descripción)
+- [ ] Edición y eliminación de productos
+- [ ] Notificaciones visuales para acciones (éxito/error)
 
-## Entregables
+### 🛍️ Gestión de Productos (CRUD Completo)
+- [ ] Creación de productos con campos:
+  - Nombre (requerido, máximo 100 caracteres)
+  - Descripción (opcional, texto largo)
+  - Precio (requerido, decimal positivo)
+  - Cantidad (requerido, entero no negativo)
+  - Categoría (seleccionar de la lista del CRUD anterior)
+  - Imagen (opcional, almacenamiento local)
+- [ ] Listado paginado con búsqueda (nombre/descripción)
+- [ ] Edición y eliminación de productos
+- [ ] Notificaciones visuales para acciones (éxito/error)
 
-1. **Código fuente:**
-
-   - Subir el código fuente al repositorio indicado en las intrucciones.
-
-2. **Archivo `README.md`:**
-
-   - Instrucciones claras para configurar y ejecutar el proyecto localmente.
-   - Explicación breve de las decisiones tomadas durante el desarrollo.
-   - Tecnologías utilizadas.
-
-3. **Demostraciones Visuales:**
-   - Capturas de pantalla o GIFs mostrando:
-     - Registro e inicio de sesión de usuarios.
-     - CRUD de productos en acción.
-     - Listado de productos.
-
----
-
-## Criterios de Evaluación
-
-1. **Funcionalidad:**
-   - La aplicación cumple con todos los requisitos funcionales descritos.
-
-2. **Diseño:**
-   - Interfaz simple, funcional y atractiva utilizando Tailwind CSS.
-
-3. **Calidad del Código:**
-   - Uso correcto de las mejores prácticas en Laravel.
-   - Estructura del proyecto clara y organizada.
-
-4. **Calidad del control de versiones:**
-
-   - Uso de git flow para la creación los commits del proyecto.
-   - Títulos descriptivos para los commits del proyecto.
-
-5. **Documentación:**
-
-   - El archivo `README.md` contiene toda la información necesaria para ejecutar y entender el proyecto.
-
-6. **Extras (opcional):**
-   - Uso de componentes reutilizables en Blade.
-   - Agregar validación avanzada en los formularios.
+### 🖥️ Interfaz de Usuario
+- [ ] Diseño responsivo con Tailwind CSS
+- [ ] Layout consistente con:
+  - Barra de navegación
+  - Área de contenido principal
+  - Mensajes de estado
+- [ ] Formularios con validación visual
+- [ ] Tabla de productos ordenable
 
 ---
 
-## Tiempo Estimado
+## ⚙️ Tecnologías Requeridas
 
-Se espera que la prueba pueda completarse en **6 horas**. Sin embargo, se otorgará un plazo de **3 días hábiles** para entregar la prueba, permitiendo al candidato organizar su tiempo.
-
----
-
-## Proceso de Entrega
-
-1. El candidato debe realizar un fork de este repositorio (https://github.com/snowworm-mx/prueba-junior).
-   - Clonar el fork a su máquina local.
-   - Crear un `branch` en su cuenta de GitHub utilizando su nombre completo.
-2. Una vez completada la prueba, realizar un pull request al repositorio original.
-3. Esperar el la revisión del código.
+| Área         | Tecnologías                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| Backend      | Laravel (actual), Eloquent ORM, Validación nativa                               |
+| Frontend     | Blade, Tailwind CSS (actual), Alpine.js (opcional)                               |
+| Base de Datos| MySQL 8+ o PostgreSQL                                                     |
+| Control Versión| Git, con commits descriptivos en inglés                                |
 
 ---
 
-**¡Éxito!**
+## 📦 Entregables Obligatorios
+
+1. **Código Fuente** en repositorio Git con:
+   - Estructura limpia y organizada
+   - Migraciones y seeders para datos de prueba
+   - Configuración de entorno (.env.example)
+
+2. **Documentación** en README.md que incluya:
+   - Requisitos del sistema
+   - Instrucciones de instalción detalladas
+   - Explicación de decisiones técnicas relevantes
+   - Capturas de pantalla del funcionamiento
+
+3. **Demo Funcional**:
+   - Video corto (2-3 min) mostrando las funcionalidades
+   - O en su defecto, GIFs demostrativos
+
+---
+
+## 📊 Criterios de Evaluación
+
+### Funcionalidad (40%)
+- Compleción de requisitos obligatorios
+- Correcto funcionamiento de todas las features
+- Manejo adecuado de errores
+
+### Código (30%)
+- Estructura limpia y organización
+- Uso apropiado de Eloquent y relaciones
+- Validación y sanitización de datos
+- Reutilización de código (componentes, traits, etc.)
+
+### UI/UX (20%)
+- Diseño consistente y profesional
+- Experiencia de usuario intuitiva
+- Responsividad en diferentes tamaños
+
+### Documentación (10%)
+- Claridad y completitud del README
+- Calidad de las instrucciones de instalación
+- Explicación de decisiones técnicas
+
+---
+
+## ⏱️ Tiempo y Entrega
+
+- **Duración estimada:** 6-8 horas
+- **Plazo de entrega:** 3 días hábiles desde asignación
+- **Formato de entrega:**
+  1. Fork del repositorio base
+  2. Desarrollo en branch con tu nombre (ej. `john-doe`)
+  3. Pull Request al repositorio original
+  4. Incluir en descripción del PR:
+     - Tiempo invertido
+     - Dificultades encontradas
+     - Features extras implementadas
+
+---
+
+## ✨ Elementos Diferenciadores (Opcionales)
+
+Estos elementos no son obligatorios pero sumarán puntos:
+
+- Implementación de tests básicos (Feature o Unit)
+- Uso de componentes Livewire
+- Sistema de categorías anidadas
+- Exportación de productos a CSV/Excel
+- Gráficos simples de inventario (usando Chart.js)
+- Despliegue en servicio free (Heroku, Railway, etc.)
+
+---
+
+## ❓ Preguntas Frecuentes
+
+**¿Puedo usar librerías adicionales?**  
+No, solo se permite utilizar las herramientas que proporcionar el framework por defecto, esto para fines de evaluación.
+
+**¿Debo implementar todos los extras?**  
+No, con los requisitos básicos es suficiente para aprobar.
+
+**¿Qué versión de Laravel debo usar?**  
+La última estable al momento de realizar la prueba.
+
+---
+
+## 📌 Notas Finales
+
+- Se valorará más código limpio y funcional que features complejas
+- El diseño debe ser profesional pero no requiere ser elaborado
+- Ante dudas, tomar decisiones razonables y documentarlas
+
+¡Buena suerte! 🚀
